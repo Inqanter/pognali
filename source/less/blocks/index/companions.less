@@ -1,0 +1,159 @@
+/* stylelint-disable unit-no-unknown */
+.companions {
+  background-color: @color--grey-lighter;
+}
+
+.companions__title {
+  margin-bottom: 20px;
+}
+
+.companions__wrapper {
+  position: relative;
+  padding: 66px 0 28px;
+  border-radius: 0 0 30px 30px;
+  background-color: @color--blue-darker;
+}
+
+.companions__wrapper::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background:
+    image-set(url("../img/background-smolov@2x.png") 2x, url("../img/background-smolov.png") 1x) no-repeat top 35px right 25px / 143px 143px,
+    image-set(url("../img/background-rogovaya@2x.png") 2x, url("../img/background-rogovaya.png") 1x) no-repeat top 307px left / 64px 71px,
+    url("../img/rectangle-small.svg") no-repeat top 40px left / 113px 132px;
+}
+
+.companions__content {
+  position: relative;
+  z-index: 1;
+}
+
+.companions__about {
+  margin-bottom: 55px;
+  padding: 0 25px;
+}
+
+.companions__text,
+.companions__message {
+  line-height: 22px;
+  color: @color--white;
+}
+
+.companions__text {
+  font-weight: 300;
+  margin: 0 0 21px;
+}
+
+.companions__message {
+  font-weight: 700;
+  margin: 0;
+}
+
+.companions__showcase {
+  margin-bottom: 17px;
+}
+
+.companions__showcase .companion:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .companions__wrapper {
+    padding: 138px 0 88px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  .companions__wrapper::after {
+    width: 768px;
+    background:
+      image-set(url("../img/background-smolov@2x.png") 2x, url("../img/background-smolov.png") 1x) no-repeat top 426px left 40px / 143px 143px,
+      image-set(url("../img/background-rogovaya_desktop@2x.png") 2x, url("../img/background-rogovaya_desktop.png") 1x) no-repeat top 80px right 74px / 285px 285px,
+      url("../img/rectangle-medium.svg") no-repeat top 70px left 40px / 212px 212px;
+  }
+
+  .companions__content {
+    padding: 0 33px;
+  }
+
+  .companions__title {
+    margin-bottom: 56px;
+  }
+
+  .companions__about {
+    max-width: 440px;
+    padding: 0;
+    margin-bottom: 60px;
+  }
+
+  .companions__text {
+    font-size: 28px;
+    line-height: 34px;
+    margin: 0 0 40px;
+  }
+
+  .companions__message {
+    font-size: 21px;
+    line-height: 24px;
+  }
+
+  .companions__showcase {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 82px;
+  }
+
+  .companions__showcase .companion:not(:last-child) {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: @desktop-width) {
+  .companions__wrapper {
+    padding: 130px 0 48px;
+  }
+
+  .companions__wrapper::after {
+    width: 1440px;
+    background:
+      image-set(url("../img/background-smolov@2x.png") 2x, url("../img/background-smolov.png") 1x) no-repeat top 130px left 548px / 143px 143px,
+      image-set(url("../img/background-rogovaya_desktop@2x.png") 2x, url("../img/background-rogovaya_desktop.png") 1x) no-repeat bottom 78px left 190px / 285px 285px,
+      url("../img/rectangle-medium.svg") no-repeat top 70px left 60px / 212px 212px;
+  }
+
+  .companions__content {
+    display: grid;
+    grid-template-columns: 440px 630px;
+    grid-template-rows: minmax(320px, max-content) 80px auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 0 0 70px;
+  }
+
+  .companions__title {
+    margin-bottom: 54px;
+  }
+
+  .companions__about {
+    grid-row: 1 / 2;
+    padding: 0;
+    margin-bottom: 85px;
+  }
+
+  .companions__more {
+    grid-row: 2 / 3;
+    max-width: 280px;
+    margin: 0;
+  }
+
+  .companions__showcase {
+    grid-row: 1 / 4;
+    margin: 0;
+    padding: 5px 0 0;
+  }
+}

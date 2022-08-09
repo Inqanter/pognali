@@ -1,0 +1,70 @@
+.pages__button {
+  position: relative;
+  display: block;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: @color--blue-light;
+  width: 150px;
+  margin: 0 auto 19px;
+  padding-left: 33px;
+}
+
+.pages__button::after,
+.pages__button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: @color--blue-light;
+}
+
+.pages__button::after {
+  transform: translateY(-50%);
+}
+
+.pages__button::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.pages__button:hover::after,
+.pages__button:hover::before {
+  opacity: 0.6;
+}
+
+.pages__button:active::after,
+.pages__button:active::before {
+  opacity: 0.3;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .pages__button {
+    font-size: 20px;
+    line-height: 20px;
+    width: 192px;
+    padding-left: 51px;
+    margin-bottom: 54px;
+  }
+
+  .pages__button::after,
+  .pages__button::before {
+    width: 26px;
+    height: 2px;
+  }
+}
+
+@media only screen and (min-width: @desktop-width) {
+  .pages {
+    padding: 0;
+  }
+
+  .pages__button {
+    width: 260px;
+    padding-left: 50px;
+    margin-bottom: 75px;
+  }
+}

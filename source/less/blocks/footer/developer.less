@@ -1,0 +1,43 @@
+.developer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid @color--grey-braindead;
+}
+
+.developer p {
+  line-height: 16px;
+  margin: 0;
+}
+
+.developer__logo img {
+  width: 27px;
+  height: 34px;
+}
+
+.developer:hover {
+  opacity: 0.6;
+}
+
+.developer:active {
+  opacity: 0.3;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .developer {
+    align-items: flex-start;
+    padding: 0;
+    border: none;
+  }
+
+  .developer__logo {
+    margin-left: 24px;
+  }
+
+  .developer p {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+}

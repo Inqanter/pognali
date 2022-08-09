@@ -1,0 +1,282 @@
+.feedback {
+  background-color: @color--yellow;
+}
+
+.feedback__wrapper {
+  padding: 69px 0 29px;
+  border-radius: 0 0 30px 30px;
+  background-color: @color--blue-darker;
+}
+
+.feedback__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feedback__about {
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+  color: @color--white;
+  padding: 0 37px;
+  margin: 0 0 29px;
+}
+
+.feedback__about a {
+  display: inline;
+  color: @color--yellow;
+  text-decoration: underline;
+}
+
+.feedback__about a:hover {
+  color: @color--orange;
+}
+
+.feedback__about a:active {
+  opacity: 0.3;
+}
+
+.feedback__form {
+  display: flex;
+  margin-bottom: 29px;
+  height: 62px;
+  border-radius: 10px 20px 20px 10px;
+  background-color: @color--white;
+}
+
+.feedback__form:hover {
+  background-color: @color--grey-lighter;
+}
+
+.feedback__input {
+  display: block;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  height: 100%;
+  width: 100%;
+  border: 4px solid transparent;
+  border-radius: 10px 0 0 10px;
+  padding: 2px 58px 2px 22px;
+  outline: none;
+}
+
+.feedback__input--error {
+  color: @color--error;
+}
+
+.feedback__input:hover {
+  background-color: @color--grey-lighter;
+}
+
+.feedback__input:focus {
+  color: @color--white;
+  background-color: @color--blue-darker;
+  border-color: @color--white;
+}
+
+.feedback__input::placeholder {
+  color: @color--placeholder;
+}
+
+.feedback__input:focus::placeholder {
+  color: @color--white;
+}
+
+.feedback__input:hover:not(:focus)::placeholder {
+  color: @color--placeholder-hover;
+}
+
+.feedback__button {
+  flex-shrink: 0;
+  width: 60px;
+  border-radius: 20px;
+}
+
+.feedback__button span {
+  display: none;
+}
+
+.feedback__text {
+  line-height: 22px;
+  text-align: center;
+  color: @color--white;
+  margin-bottom: 18px;
+}
+
+.feedback__text p {
+  margin: 0;
+}
+
+.feedback .interaction {
+  display: block;
+}
+
+.feedback .interaction span {
+  display: block;
+  color: @color--yellow;
+}
+
+.feedback .interaction__link::before {
+  width: 45px;
+  height: 45px;
+  background-color: @color--blue-darkest;
+}
+
+.feedback .interaction__link--phone::after,
+.feedback .interaction__link--email::after {
+  background-color: @color--yellow;
+}
+
+.feedback .interaction__link--phone::after {
+  left: 14px;
+  mask: url("../img/icon-phone--secondary.svg") no-repeat center;
+}
+
+.feedback .interaction__link--email::after {
+  width: 23px;
+  height: 25px;
+  mask: url("../img/icon-email--secondary.svg") no-repeat center;
+}
+
+.feedback .interaction__link:active {
+  opacity: 0.3;
+}
+
+.feedback .interaction__link:hover span {
+  color: @color--yellow-darker;
+}
+
+.feedback .interaction__link:hover::after {
+  background-color: @color--yellow-darker;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .feedback__wrapper {
+    padding: 73px 0 60px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  .feedback__about {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0 auto 66px;
+  }
+
+  .feedback__title {
+    margin-bottom: 61px;
+  }
+
+  .feedback__form {
+    max-width: 616px;
+    height: 80px;
+    margin: 0 auto 59px;
+    border-radius: 20px;
+  }
+
+  .feedback__input {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 5px 80px 5px 33px;
+  }
+
+  .feedback__button {
+    width: 80px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .feedback__text {
+    line-height: 30px;
+    margin-bottom: 42px;
+  }
+
+  .feedback__text p {
+    display: inline;
+  }
+
+  .feedback .interaction {
+    padding-left: 35px;
+  }
+
+  .feedback .interaction__link::before {
+    width: 68px;
+    height: 68px;
+  }
+
+  .feedback .interaction__link--phone::after {
+    left: 20px;
+    width: 27px;
+    height: 26px;
+    mask: url("../img/icon-phone--secondary.svg") no-repeat center / cover;
+  }
+
+  .feedback .interaction__link--email::after {
+    left: 17px;
+    width: 35px;
+    height: 38px;
+    mask: url("../img/icon-email--secondary.svg") no-repeat center / cover;
+  }
+}
+
+@media only screen and (min-width: @desktop-width) {
+  .feedback__wrapper {
+    padding: 105px 0 105px;
+  }
+
+  .feedback__title {
+    margin-bottom: 60px;
+  }
+
+  .feedback__about {
+    max-width: 710px;
+    margin-bottom: 59px;
+  }
+
+  .feedback__form {
+    max-width: 89%;
+    margin-bottom: 70px;
+  }
+
+  .feedback__button {
+    text-align: start;
+    width: 323px;
+    padding-right: 50px;
+  }
+
+  .feedback__button span {
+    display: block;
+  }
+
+  .feedback__text {
+    margin-bottom: 45px;
+  }
+
+  .feedback .interaction {
+    display: flex;
+    justify-content: space-between;
+    width: 869px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .feedback .interaction__link::before {
+    width: 90px;
+    height: 90px;
+  }
+
+  .feedback .interaction__link--phone::after {
+    left: 27px;
+    width: 36px;
+    height: 34px;
+  }
+
+  .feedback .interaction__link--email::after {
+    left: 22px;
+    width: 47px;
+    height: 50px;
+  }
+
+  .feedback .interaction__link span {
+    padding: 0 0 0 31px;
+  }
+}

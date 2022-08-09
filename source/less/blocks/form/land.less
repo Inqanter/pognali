@@ -1,0 +1,347 @@
+.land {
+  position: relative;
+  display: flex;
+}
+
+.land:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.land:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: 50px;
+  width: 5px;
+  height: 10px;
+  background: url("../img/land-arrow.svg") no-repeat center / cover;
+}
+
+.land__button {
+  position: relative;
+  font-family: @font--primary;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: start;
+  white-space: nowrap;
+  color: @color--blue-light;
+  background-color: transparent;
+  border: 1px solid @color--outline;
+  border-radius: 4px;
+  padding: 12px 9px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.land__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-image:
+    url("../img/icon-select.svg"),
+    linear-gradient(to left, @color--white 60%, transparent);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 25px 50%, 100%;
+}
+
+.land__button:hover:not(.land__button--add) {
+  border-color: @color--grey-nightmare;
+}
+
+.land__button--empty {
+  letter-spacing: 0.1em;
+}
+
+.land__flag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 53px;
+  border: 1px solid @color--outline;
+  border-radius: 4px;
+}
+
+.land__button--empty::after,
+.land__button--add::after,
+.land__flag::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.land__button--empty::after,
+.land__button--add::after {
+  right: 48px;
+  border: 1px solid @color--outline;
+}
+
+.land__button--add {
+  letter-spacing: 0.1em;
+  border-color: transparent;
+  background-color: @color--grey-lighter;
+  color: @color--blue-light;
+}
+
+.land__button--add:hover {
+  background-color: @color--blue-lightest;
+}
+
+.land__button--add:hover::before {
+  opacity: 0.3;
+}
+
+.land__button--add::before,
+.land__button--active::before {
+  top: 50%;
+  right: 13px;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+}
+
+.land__button--add::before {
+  background: url("../img/icon-plus.svg") no-repeat center / cover;
+  opacity: 0.2;
+}
+
+.land__button--active::before {
+  background: url("../img/land-close.svg") no-repeat center / cover;
+  opacity: 0.3;
+}
+
+.land__button--active:hover::before {
+  opacity: 1;
+}
+
+.land__button--active:active::before,
+.land__button--add:active::before {
+  opacity: 0.1;
+}
+
+.land__button--active {
+  color: @color--white;
+  background-color: @color--blue-light;
+  border-color: transparent;
+  border-radius: 4px 4px 0 0;
+}
+
+.land__button--active::after {
+  z-index: -1;
+}
+
+.land__flag::before {
+  left: -5px;
+  background-color: @color--blue-light;
+}
+
+.land__delete {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: @color--grey-lighter;
+}
+
+.land__delete::before,
+.land__delete::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.7px;
+  height: 8px;
+  background-color: @color--black;
+  opacity: 0.1;
+}
+
+.land__delete::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.land__delete::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.land__delete:hover::before,
+.land__delete:hover::after {
+  opacity: 0.3;
+}
+
+.land__delete:active::before,
+.land__delete:active::after {
+  opacity: 0.05;
+}
+
+.land__select {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background-color: @color--white;
+  z-index: 98;
+}
+
+.land__button--active ~ .land__delete {
+  display: none;
+}
+
+.land__button--active ~ .land__select {
+  display: block;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .land {
+    display: flex;
+    align-items: center;
+  }
+
+  .land:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .land:not(:last-child)::after {
+    content: none;
+  }
+
+  .land__button {
+    font-size: 20px;
+    line-height: 20px;
+    max-width: 372px;
+    height: 70px;
+    padding: 12px 50px 12px 29px;
+    overflow: initial;
+  }
+
+  .land__button::before {
+    background-size: 17px 20px, 100%;
+    background-position: 6px 50%, 100%;
+  }
+
+  .land__flag {
+    width: 70px;
+    height: 43px;
+    border: none;
+    margin-left: 52px;
+  }
+
+  .land__flag::before {
+    left: -32px;
+  }
+
+  .land__flag .flags__img {
+    width: inherit;
+    height: inherit;
+  }
+
+  .land__button--empty::after,
+  .land__button--add::after,
+  .land__flag::before {
+    width: 14px;
+    height: 14px;
+    z-index: 97;
+  }
+
+  .land__button--empty::after,
+  .land__button--add::after {
+    right: -34px;
+    background-color: @color--white;
+    z-index: 97;
+  }
+
+  .land__button--add::before,
+  .land__button--active::before {
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+  }
+
+  .land__delete {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 24px;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .land__delete::before,
+  .land__delete::after {
+    height: 100%;
+  }
+
+  .land__button--active ~ .land__select {
+    display: flex;
+  }
+
+  .land__select {
+    justify-content: space-between;
+    width: 107.5%;
+    padding: 34px 0 31px 31px;
+    box-shadow: 0 4px 4px 0 @color--black-nightmare;
+  }
+}
+
+@media only screen and (min-width: @desktop-width) {
+  .land__button {
+    max-width: 732px;
+  }
+
+  .land__button::before {
+    width: 52px;
+    background-size: 24px 26px;
+  }
+
+  .land__button--add::before,
+  .land__button--active::before {
+    width: 24px;
+  }
+
+  .land__button--empty::after,
+  .land__button--add::after {
+    right: -53px;
+  }
+
+  .land__flag {
+    margin-left: 85px;
+  }
+
+  .land__flag::before {
+    left: -47px;
+  }
+
+  .land__select {
+    width: 732px;
+    padding-left: 28px;
+  }
+
+  .land__select::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 240px;
+    width: 1px;
+    height: 100%;
+    background-color: @color--grey-dark;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,35 @@
+.tags::placeholder {
+  color: @color--placeholder;
+}
+
+.tags:hover {
+  border-color: @color--outline-lighter;
+}
+
+.tags__content {
+  display: block;
+  font-family: @font--primary;
+  font-size: 16px;
+  line-height: 18px;
+  color: @color--text-main;
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  outline: none;
+}
+
+.tags__content::placeholder {
+  opacity: 0.6;
+}
+
+.tags__content:focus {
+  outline: 1px solid @color--blue-secondary;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .tags__content {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}

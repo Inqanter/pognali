@@ -1,0 +1,56 @@
+.button {
+  display: block;
+  font-family: @font--primary;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  color: @color--blue-light;
+  width: 100%;
+  padding: 24px 23px;
+  background-color: @color--yellow;
+  border: none;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: @color--yellow-darker;
+}
+
+.button:active {
+  color: @color--blue-shadow;
+}
+
+.button:active::before {
+  background-color: @color--blue-shadow;
+}
+
+.button--dispatcher {
+  position: relative;
+}
+
+.button--dispatcher::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 21px;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  mask: url("../img/icon-arrow.svg") no-repeat center;
+  background-color: @color--blue-darker;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .button {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 28px 34px;
+    border-radius: 20px;
+  }
+
+  .button--dispatcher::before {
+    width: 15px;
+    height: 15px;
+    right: 31px;
+  }
+}

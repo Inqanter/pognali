@@ -1,0 +1,7 @@
+{
+  "tab_size": 2,
+  "indent_size": 2,
+  "wrap_line_length": 180,
+  "space_around_combinator": true,
+  "end_with_newline": true
+}

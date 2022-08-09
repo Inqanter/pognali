@@ -1,0 +1,51 @@
+.change__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: @color--blue;
+  background-color: @color--blue-lightest;
+  border-radius: 20px;
+  height: 40px;
+}
+
+.change__label:hover {
+  background-color: @color--blue-moonlight;
+}
+
+.change__label:active {
+  color: @color--blue-ghost;
+}
+
+.change__word {
+  display: none;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .change__label {
+    font-size: 20px;
+    line-height: 18px;
+    height: 60px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (min-width: @desktop-width) {
+  .change__label {
+    width: 190px;
+    height: 47px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .change__phrase {
+    display: none;
+  }
+
+  .change__word {
+    display: inline;
+  }
+}

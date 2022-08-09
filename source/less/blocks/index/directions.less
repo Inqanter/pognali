@@ -1,0 +1,127 @@
+.directions {
+  background-color: @color--blue-darker;
+}
+
+.directions__wrapper {
+  padding: 70px 0 31px;
+  border-radius: 0 0 30px 30px;
+  background-color: @color--grey-lighter;
+}
+
+.directions__title {
+  margin-bottom: 20px;
+}
+
+.directions__text {
+  padding: 0 25px;
+  margin: 0 0 61px;
+}
+
+.directions__text p {
+  padding-right: 20px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.directions__options {
+  margin-bottom: 26px;
+}
+
+.directions__options .direction:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+@media only screen and (min-width: @tablet-width) {
+  .directions__wrapper {
+    padding: 70px 0 81px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  .directions__content {
+    padding: 0 34px;
+    background: image-set(url("../img/background-directions@2x.png") 2x, url("../img/background-directions.png") 1x) no-repeat top 10px right 0 / 288px 574px;
+  }
+
+  .directions__options {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .directions__options::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -35px;
+    width: 141px;
+    height: 141px;
+    background: url("../img/rectangle-small--grey.svg") no-repeat center;
+  }
+
+  .directions__options .direction:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .directions__text {
+    max-width: 340px;
+    padding: 0;
+    margin-bottom: 106px;
+  }
+
+  .directions__text p {
+    line-height: 33px;
+    padding-right: 0;
+  }
+
+  .directions__title {
+    margin-bottom: 58px;
+  }
+
+  .directions__button::before {
+    right: 30px;
+  }
+}
+
+@media only screen and (min-width: @desktop-width) {
+  .directions__wrapper {
+    padding: 80px 0 76px;
+  }
+
+  .directions__content {
+    display: grid;
+    grid-template-columns: 560px 340px;
+    grid-template-rows: minmax(340px, max-content) minmax(80px, 80px) auto;
+    align-items: start;
+    gap: 0 171px;
+    padding: 81px 70px 40px;
+  }
+
+  .directions__title {
+    margin-bottom: 61px;
+  }
+
+  .directions__options {
+    grid-row: 1 / 4;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .directions__options::before {
+    top: -70px;
+    left: -70px;
+  }
+
+  .directions__text {
+    order: 1;
+    grid-row: 1 / 2;
+    padding: 0;
+    margin-bottom: 102px;
+  }
+
+  .directions__button {
+    order: 2;
+    grid-column-start: 2;
+    grid-row: 2 / 3;
+    margin: 0;
+    max-width: 275px;
+  }
+}
